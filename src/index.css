@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Eco-Friendly Design System - Vibrant gradient palette for sustainability tracking */
+
+@layer base {
+  :root {
+    /* Base eco theme colors */
+    --background: 0 0% 98%;
+    --foreground: 247 46% 16%;
+
+    /* Card system */
+    --card: 0 0% 100%;
+    --card-foreground: 247 46% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 247 46% 16%;
+
+    /* Primary eco gradient - deep purple to bright blue */
+    --primary: 247 46% 36%;
+    --primary-light: 239 78% 70%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Eco energy colors - warm oranges */
+    --eco-warm: 45 93% 49%;
+    --eco-energy: 31 93% 49%;
+    --eco-fire: 19 90% 49%;
+
+    /* Secondary and accent */
+    --secondary: 239 78% 95%;
+    --secondary-foreground: 247 46% 36%;
+
+    --muted: 239 20% 96%;
+    --muted-foreground: 247 20% 50%;
+
+    --accent: 239 78% 92%;
+    --accent-foreground: 247 46% 36%;
+
+    /* Status colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+
+    --warning: 45 93% 49%;
+    --warning-foreground: 247 46% 16%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* UI elements */
+    --border: 239 20% 90%;
+    --input: 239 20% 94%;
+    --ring: 239 78% 70%;
+
+    --radius: 1rem;
+
+    /* Eco-specific gradients and effects */
+    --gradient-eco-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-eco-energy: linear-gradient(135deg, hsl(var(--eco-warm)), hsl(var(--eco-fire)));
+    --gradient-eco-success: linear-gradient(135deg, hsl(var(--success)), hsl(142 76% 45%));
+    --gradient-subtle: linear-gradient(135deg, hsl(var(--background)), hsl(var(--accent)));
+
+    /* Shadows and glows */
+    --shadow-eco: 0 10px 40px -10px hsl(var(--primary) / 0.2);
+    --shadow-energy: 0 10px 40px -10px hsl(var(--eco-energy) / 0.3);
+    --glow-success: 0 0 30px hsl(var(--success) / 0.4);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Sidebar (keeping compatibility) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme eco colors */
+    --background: 247 46% 8%;
+    --foreground: 239 78% 95%;
+
+    --card: 247 46% 12%;
+    --card-foreground: 239 78% 95%;
+
+    --popover: 247 46% 12%;
+    --popover-foreground: 239 78% 95%;
+
+    /* Primary eco gradient - adjusted for dark */
+    --primary: 239 78% 70%;
+    --primary-light: 239 78% 85%;
+    --primary-foreground: 247 46% 16%;
+
+    /* Eco energy colors remain vibrant */
+    --eco-warm: 45 93% 49%;
+    --eco-energy: 31 93% 49%;
+    --eco-fire: 19 90% 49%;
+
+    --secondary: 247 30% 20%;
+    --secondary-foreground: 239 78% 95%;
+
+    --muted: 247 30% 18%;
+    --muted-foreground: 239 20% 65%;
+
+    --accent: 247 30% 22%;
+    --accent-foreground: 239 78% 95%;
+
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 98%;
+
+    --warning: 45 93% 49%;
+    --warning-foreground: 247 46% 16%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 247 30% 25%;
+    --input: 247 30% 22%;
+    --ring: 239 78% 70%;
+
+    /* Dark sidebar */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* Optimize font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Improve text rendering on mobile */
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Optimize animations for performance */
+  * {
+    /* Use GPU acceleration for transforms */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* Better touch targets for mobile */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Focus visible for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
