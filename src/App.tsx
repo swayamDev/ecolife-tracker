@@ -35,7 +35,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename="/ecolife-tracker/">
           <div className="min-h-screen bg-background">
             <Navigation />
             <PageTransition>
