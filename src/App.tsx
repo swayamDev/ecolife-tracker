@@ -29,13 +29,15 @@ const PageLoader = () => (
   </div>
 );
 
+const basename = import.meta.env.BASE_URL;
+
 const App = () => (
   <ErrorBoundary>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter basename="/ecolife-tracker/">
+        <BrowserRouter basename={basename}>
           <div className="min-h-screen bg-background">
             <Navigation />
             <PageTransition>
