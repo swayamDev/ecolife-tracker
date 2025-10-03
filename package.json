@@ -10,7 +10,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && cp dist/index.html",
     "deploy": "DEPLOY_TARGET=gh-pages npm run build && gh-pages -d dist",
     "build:netlify": "DEPLOY_TARGET=netlify vite build"
   },
